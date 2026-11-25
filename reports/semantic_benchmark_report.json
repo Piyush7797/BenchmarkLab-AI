@@ -1,0 +1,171 @@
+{
+    "total_questions": 20,
+    "strict_accuracy": 0.75,
+    "semantic_accuracy": 0.9,
+    "strict_execution_success_rate": 1.0,
+    "semantic_execution_success_rate": 1.0,
+    "strict_correct": 15,
+    "semantic_correct": 18,
+    "results": [
+        {
+            "question_id": "CS001",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "CS002",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "CS003",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "CS004",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "CS005",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "CS006",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "CS007",
+            "strict_accuracy": 0.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 0.0,
+            "semantic_execution_success": true,
+            "semantic_match": false
+        },
+        {
+            "question_id": "CS008",
+            "strict_accuracy": 0.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "CS009",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "CS010",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "OR001",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "OR002",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "OR003",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "OR004",
+            "strict_accuracy": 0.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "OR005",
+            "strict_accuracy": 0.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 0.0,
+            "semantic_execution_success": true,
+            "semantic_match": false
+        },
+        {
+            "question_id": "OR006",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "OR007",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "OR008",
+            "strict_accuracy": 0.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "OR009",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        },
+        {
+            "question_id": "OR010",
+            "strict_accuracy": 1.0,
+            "strict_execution_success": true,
+            "semantic_accuracy": 1.0,
+            "semantic_execution_success": true,
+            "semantic_match": true
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+﻿{
+  "CS001": "SELECT COUNT(*) AS total_customers FROM customer_shopping;",
+  "CS002": "SELECT category, COUNT(*) AS purchase_count FROM customer_shopping GROUP BY category ORDER BY purchase_count DESC;",
+  "CS003": "SELECT gender, AVG(purchase_amount_usd) AS avg_purchase_amount FROM customer_shopping GROUP BY gender;",
+  "CS004": "SELECT location, AVG(purchase_amount_usd) AS avg_purchase_amount FROM customer_shopping GROUP BY location ORDER BY avg_purchase_amount DESC LIMIT 5;",
+  "CS005": "SELECT category, AVG(review_rating) AS avg_review_rating FROM customer_shopping GROUP BY category;",
+  "CS006": "SELECT subscription_status, COUNT(*) AS customer_count, AVG(purchase_amount_usd) AS avg_purchase_amount FROM customer_shopping GROUP BY subscription_status;",
+  "CS007": "SELECT discount_applied, COUNT(*) AS purchase_count, AVG(purchase_amount_usd) AS avg_purchase_amount, SUM(purchase_amount_usd) AS total_purchase_amount FROM customer_shopping GROUP BY discount_applied;",
+  "CS008": "SELECT CASE WHEN age < 25 THEN 'Under 25' WHEN age BETWEEN 25 AND 44 THEN '25-44' WHEN age BETWEEN 45 AND 59 THEN '45-59' ELSE '60+' END AS age_band, COUNT(*) AS customer_count FROM customer_shopping GROUP BY age_band ORDER BY customer_count DESC;",
+  "CS009": "SELECT payment_method, COUNT(*) AS purchase_count FROM customer_shopping GROUP BY payment_method ORDER BY purchase_count DESC;",
+  "CS010": "SELECT season, AVG(purchase_amount_usd) AS avg_purchase_amount FROM customer_shopping GROUP BY season ORDER BY avg_purchase_amount DESC;",
+  "OR001": "SELECT COUNT(*) AS total_records FROM online_retail;",
+  "OR002": "SELECT COUNT(DISTINCT invoice_no) AS distinct_invoices FROM online_retail;",
+  "OR003": "SELECT country, SUM(quantity * unit_price) AS gross_sales FROM online_retail WHERE invoice_no NOT LIKE 'C%' AND quantity > 0 AND unit_price > 0 GROUP BY country ORDER BY gross_sales DESC LIMIT 10;",
+  "OR004": "SELECT substr(invoice_date, 1, 7) AS month, SUM(quantity * unit_price) AS monthly_revenue FROM online_retail WHERE invoice_no NOT LIKE 'C%' AND quantity > 0 AND unit_price > 0 GROUP BY month ORDER BY month;",
+  "OR005": "SELECT stock_code, description, SUM(quantity) AS total_quantity_sold FROM online_retail WHERE invoice_no NOT LIKE 'C%' AND quantity > 0 AND unit_price > 0 GROUP BY stock_code, description ORDER BY total_quantity_sold DESC LIMIT 10;",
+  "OR006": "SELECT AVG(invoice_total) AS average_invoice_value FROM (SELECT invoice_no, SUM(quantity * unit_price) AS invoice_total FROM online_retail WHERE invoice_no NOT LIKE 'C%' AND quantity > 0 AND unit_price > 0 GROUP BY invoice_no);",
+  "OR007": "SELECT CAST(substr(invoice_date, 12, 2) AS INTEGER) AS hour, COUNT(*) AS transaction_count FROM online_retail WHERE quantity > 0 AND invoice_no NOT LIKE 'C%' GROUP BY hour ORDER BY hour;",
+  "OR008": "SELECT substr(invoice_date, 1, 7) AS month, COUNT(*) AS return_count FROM online_retail WHERE quantity < 0 GROUP BY month ORDER BY month;",
+  "OR009": "SELECT COUNT(*) AS cancelled_records FROM online_retail WHERE invoice_no LIKE 'C%';",
+  "OR010": "SELECT country, COUNT(DISTINCT customer_id) AS unique_customers FROM online_retail WHERE customer_id IS NOT NULL GROUP BY country ORDER BY unique_customers DESC;"
+}

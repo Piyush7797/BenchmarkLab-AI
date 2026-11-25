@@ -1,0 +1,618 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "total_questions": 20,
+  "execution_success_count": 20,
+  "execution_success_rate": 1.0,
+  "correct_count": 15,
+  "accuracy": 0.75,
+  "average_latency_ms": 968.02,
+  "total_latency_ms": 19360.5,
+  "total_prompt_tokens": 5689,
+  "total_completion_tokens": 3144,
+  "total_tokens": 8833,
+  "database_saved_count": 20,
+  "results": [
+    {
+      "question_id": "CS001",
+      "dataset": "customer_shopping",
+      "question": "How many customers are in the dataset?",
+      "generated_sql": "SELECT COUNT(DISTINCT customer_id) FROM customer_shopping;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 1,
+        "reference_row_count": 1,
+        "predicted_columns": [
+          "COUNT(DISTINCT customer_id)"
+        ],
+        "reference_columns": [
+          "total_customers"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT COUNT(DISTINCT customer_id) FROM customer_shopping;",
+        "latency_ms": 1347.87,
+        "prompt_tokens": 289,
+        "completion_tokens": 71,
+        "total_tokens": 360
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "CS002",
+      "dataset": "customer_shopping",
+      "question": "How many purchases are recorded in each category?",
+      "generated_sql": "SELECT category, COUNT(*) AS purchase_count\nFROM customer_shopping\nGROUP BY category;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 4,
+        "reference_row_count": 4,
+        "predicted_columns": [
+          "category",
+          "purchase_count"
+        ],
+        "reference_columns": [
+          "category",
+          "purchase_count"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT category, COUNT(*) AS purchase_count\nFROM customer_shopping\nGROUP BY category;",
+        "latency_ms": 881.39,
+        "prompt_tokens": 290,
+        "completion_tokens": 77,
+        "total_tokens": 367
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "CS003",
+      "dataset": "customer_shopping",
+      "question": "What is the average purchase amount by gender?",
+      "generated_sql": "SELECT gender, AVG(purchase_amount_usd) AS avg_purchase_amount FROM customer_shopping GROUP BY gender;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 2,
+        "reference_row_count": 2,
+        "predicted_columns": [
+          "gender",
+          "avg_purchase_amount"
+        ],
+        "reference_columns": [
+          "gender",
+          "avg_purchase_amount"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT gender, AVG(purchase_amount_usd) AS avg_purchase_amount FROM customer_shopping GROUP BY gender;",
+        "latency_ms": 729.01,
+        "prompt_tokens": 290,
+        "completion_tokens": 75,
+        "total_tokens": 365
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "CS004",
+      "dataset": "customer_shopping",
+      "question": "Which five locations have the highest average purchase amount?",
+      "generated_sql": "SELECT location, AVG(purchase_amount_usd) AS avg_purchase_amount\nFROM customer_shopping\nGROUP BY location\nORDER BY avg_purchase_amount DESC\nLIMIT 5;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 5,
+        "reference_row_count": 5,
+        "predicted_columns": [
+          "location",
+          "avg_purchase_amount"
+        ],
+        "reference_columns": [
+          "location",
+          "avg_purchase_amount"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT location, AVG(purchase_amount_usd) AS avg_purchase_amount\nFROM customer_shopping\nGROUP BY location\nORDER BY avg_purchase_amount DESC\nLIMIT 5;",
+        "latency_ms": 910.63,
+        "prompt_tokens": 291,
+        "completion_tokens": 135,
+        "total_tokens": 426
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "CS005",
+      "dataset": "customer_shopping",
+      "question": "What is the average review rating for each category?",
+      "generated_sql": "SELECT category, AVG(review_rating) AS avg_review_rating\nFROM customer_shopping\nGROUP BY category;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 4,
+        "reference_row_count": 4,
+        "predicted_columns": [
+          "category",
+          "avg_review_rating"
+        ],
+        "reference_columns": [
+          "category",
+          "avg_review_rating"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT category, AVG(review_rating) AS avg_review_rating\nFROM customer_shopping\nGROUP BY category;",
+        "latency_ms": 623.75,
+        "prompt_tokens": 291,
+        "completion_tokens": 67,
+        "total_tokens": 358
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "CS006",
+      "dataset": "customer_shopping",
+      "question": "For each subscription status, calculate customer count and average purchase amount.",
+      "generated_sql": "SELECT\n    subscription_status,\n    COUNT(DISTINCT customer_id) AS customer_count,\n    AVG(purchase_amount_usd) AS avg_purchase_amount\nFROM customer_shopping\nGROUP BY subscription_status;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 2,
+        "reference_row_count": 2,
+        "predicted_columns": [
+          "subscription_status",
+          "customer_count",
+          "avg_purchase_amount"
+        ],
+        "reference_columns": [
+          "subscription_status",
+          "customer_count",
+          "avg_purchase_amount"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT\n    subscription_status,\n    COUNT(DISTINCT customer_id) AS customer_count,\n    AVG(purchase_amount_usd) AS avg_purchase_amount\nFROM customer_shopping\nGROUP BY subscription_status;",
+        "latency_ms": 870.03,
+        "prompt_tokens": 294,
+        "completion_tokens": 162,
+        "total_tokens": 456
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "CS007",
+      "dataset": "customer_shopping",
+      "question": "Compare purchase amount statistics for customers who applied discounts versus those who did not.",
+      "generated_sql": "SELECT \n    CASE \n        WHEN discount_applied IS NOT NULL AND discount_applied <> '' THEN 'Discount Applied' \n        ELSE 'No Discount' \n    END AS discount_status,\n    COUNT(*) AS customer_count,\n    SUM(purchase_amount_usd) AS total_purchase_amount,\n    AVG(purchase_amount_usd) AS average_purchase_amount,\n    MIN(purchase_amount_usd) AS min_purchase_amount,\n    MAX(purchase_amount_usd) AS max_purchase_amount\nFROM customer_shopping\nGROUP BY discount_status;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 0.0,
+        "results_match": false,
+        "predicted_row_count": 1,
+        "reference_row_count": 2,
+        "predicted_columns": [
+          "discount_status",
+          "customer_count",
+          "total_purchase_amount",
+          "average_purchase_amount",
+          "min_purchase_amount",
+          "max_purchase_amount"
+        ],
+        "reference_columns": [
+          "discount_applied",
+          "purchase_count",
+          "avg_purchase_amount",
+          "total_purchase_amount"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT \n    CASE \n        WHEN discount_applied IS NOT NULL AND discount_applied <> '' THEN 'Discount Applied' \n        ELSE 'No Discount' \n    END AS discount_status,\n    COUNT(*) AS customer_count,\n    SUM(purchase_amount_usd) AS total_purchase_amount,\n    AVG(purchase_amount_usd) AS average_purchase_amount,\n    MIN(purchase_amount_usd) AS min_purchase_amount,\n    MAX(purchase_amount_usd) AS max_purchase_amount\nFROM customer_shopping\nGROUP BY discount_status;",
+        "latency_ms": 1932.01,
+        "prompt_tokens": 296,
+        "completion_tokens": 332,
+        "total_tokens": 628
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "CS008",
+      "dataset": "customer_shopping",
+      "question": "Group customers into age bands: under 25, 25 to 44, 45 to 59, and 60 or above.",
+      "generated_sql": "SELECT \n    CASE \n        WHEN age < 25 THEN 'under 25'\n        WHEN age BETWEEN 25 AND 44 THEN '25 to 44'\n        WHEN age BETWEEN 45 AND 59 THEN '45 to 59'\n        ELSE '60 or above'\n    END AS age_band,\n    COUNT(DISTINCT customer_id) AS customer_count\nFROM customer_shopping\nGROUP BY age_band\nORDER BY age_band;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 0.0,
+        "results_match": false,
+        "predicted_row_count": 4,
+        "reference_row_count": 4,
+        "predicted_columns": [
+          "age_band",
+          "customer_count"
+        ],
+        "reference_columns": [
+          "age_band",
+          "customer_count"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT \n    CASE \n        WHEN age < 25 THEN 'under 25'\n        WHEN age BETWEEN 25 AND 44 THEN '25 to 44'\n        WHEN age BETWEEN 45 AND 59 THEN '45 to 59'\n        ELSE '60 or above'\n    END AS age_band,\n    COUNT(DISTINCT customer_id) AS customer_count\nFROM customer_shopping\nGROUP BY age_band\nORDER BY age_band;",
+        "latency_ms": 1002.58,
+        "prompt_tokens": 309,
+        "completion_tokens": 287,
+        "total_tokens": 596
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "CS009",
+      "dataset": "customer_shopping",
+      "question": "How many purchases were made using each payment method?",
+      "generated_sql": "SELECT payment_method, COUNT(*) AS purchase_count\nFROM customer_shopping\nGROUP BY payment_method;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 6,
+        "reference_row_count": 6,
+        "predicted_columns": [
+          "payment_method",
+          "purchase_count"
+        ],
+        "reference_columns": [
+          "payment_method",
+          "purchase_count"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT payment_method, COUNT(*) AS purchase_count\nFROM customer_shopping\nGROUP BY payment_method;",
+        "latency_ms": 645.09,
+        "prompt_tokens": 291,
+        "completion_tokens": 76,
+        "total_tokens": 367
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "CS010",
+      "dataset": "customer_shopping",
+      "question": "What is the average purchase amount by season?",
+      "generated_sql": "SELECT season, AVG(purchase_amount_usd) AS average_purchase_amount_usd\nFROM customer_shopping\nGROUP BY season;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 4,
+        "reference_row_count": 4,
+        "predicted_columns": [
+          "season",
+          "average_purchase_amount_usd"
+        ],
+        "reference_columns": [
+          "season",
+          "avg_purchase_amount"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT season, AVG(purchase_amount_usd) AS average_purchase_amount_usd\nFROM customer_shopping\nGROUP BY season;",
+        "latency_ms": 1006.31,
+        "prompt_tokens": 290,
+        "completion_tokens": 83,
+        "total_tokens": 373
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "OR001",
+      "dataset": "online_retail",
+      "question": "How many line-item records are in the online retail dataset?",
+      "generated_sql": "SELECT COUNT(*) AS line_item_count FROM online_retail;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 1,
+        "reference_row_count": 1,
+        "predicted_columns": [
+          "line_item_count"
+        ],
+        "reference_columns": [
+          "total_records"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT COUNT(*) AS line_item_count FROM online_retail;",
+        "latency_ms": 584.73,
+        "prompt_tokens": 275,
+        "completion_tokens": 70,
+        "total_tokens": 345
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "OR002",
+      "dataset": "online_retail",
+      "question": "How many distinct invoice numbers are in the dataset?",
+      "generated_sql": "SELECT COUNT(DISTINCT invoice_no) AS distinct_invoice_count FROM online_retail;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 1,
+        "reference_row_count": 1,
+        "predicted_columns": [
+          "distinct_invoice_count"
+        ],
+        "reference_columns": [
+          "distinct_invoices"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT COUNT(DISTINCT invoice_no) AS distinct_invoice_count FROM online_retail;",
+        "latency_ms": 580.04,
+        "prompt_tokens": 273,
+        "completion_tokens": 54,
+        "total_tokens": 327
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "OR003",
+      "dataset": "online_retail",
+      "question": "Which ten countries have the highest gross sales, excluding cancellations, returns, and nonpositive unit prices?",
+      "generated_sql": "SELECT country, SUM(total_amount) AS gross_sales\nFROM online_retail\nWHERE is_cancelled = 0\n  AND is_return = 0\n  AND is_zero_or_negative_price = 0\nGROUP BY country\nORDER BY gross_sales DESC\nLIMIT 10;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 10,
+        "reference_row_count": 10,
+        "predicted_columns": [
+          "country",
+          "gross_sales"
+        ],
+        "reference_columns": [
+          "country",
+          "gross_sales"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT country, SUM(total_amount) AS gross_sales\nFROM online_retail\nWHERE is_cancelled = 0\n  AND is_return = 0\n  AND is_zero_or_negative_price = 0\nGROUP BY country\nORDER BY gross_sales DESC\nLIMIT 10;",
+        "latency_ms": 1175.57,
+        "prompt_tokens": 283,
+        "completion_tokens": 277,
+        "total_tokens": 560
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "OR004",
+      "dataset": "online_retail",
+      "question": "Calculate monthly revenue excluding cancellations, returns, and nonpositive unit prices.",
+      "generated_sql": "SELECT invoice_year, invoice_month, SUM(total_amount) AS monthly_revenue\nFROM online_retail\nWHERE NOT is_cancelled AND NOT is_return AND NOT is_zero_or_negative_price\nGROUP BY invoice_year, invoice_month\nORDER BY invoice_year, invoice_month;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 0.0,
+        "results_match": false,
+        "predicted_row_count": 13,
+        "reference_row_count": 13,
+        "predicted_columns": [
+          "invoice_year",
+          "invoice_month",
+          "monthly_revenue"
+        ],
+        "reference_columns": [
+          "month",
+          "monthly_revenue"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT invoice_year, invoice_month, SUM(total_amount) AS monthly_revenue\nFROM online_retail\nWHERE NOT is_cancelled AND NOT is_return AND NOT is_zero_or_negative_price\nGROUP BY invoice_year, invoice_month\nORDER BY invoice_year, invoice_month;",
+        "latency_ms": 1139.05,
+        "prompt_tokens": 277,
+        "completion_tokens": 303,
+        "total_tokens": 580
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "OR005",
+      "dataset": "online_retail",
+      "question": "What are the ten best-selling products by quantity, excluding cancellation and return records?",
+      "generated_sql": "SELECT\n    stock_code,\n    description,\n    SUM(quantity) AS total_quantity\nFROM online_retail\nWHERE is_cancelled = 0\n  AND is_return = 0\nGROUP BY stock_code, description\nORDER BY total_quantity DESC\nLIMIT 10;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 0.0,
+        "results_match": false,
+        "predicted_row_count": 10,
+        "reference_row_count": 10,
+        "predicted_columns": [
+          "stock_code",
+          "description",
+          "total_quantity"
+        ],
+        "reference_columns": [
+          "stock_code",
+          "description",
+          "total_quantity_sold"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT\n    stock_code,\n    description,\n    SUM(quantity) AS total_quantity\nFROM online_retail\nWHERE is_cancelled = 0\n  AND is_return = 0\nGROUP BY stock_code, description\nORDER BY total_quantity DESC\nLIMIT 10;",
+        "latency_ms": 758.12,
+        "prompt_tokens": 279,
+        "completion_tokens": 222,
+        "total_tokens": 501
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "OR006",
+      "dataset": "online_retail",
+      "question": "What is the average invoice value calculated using positive transactions only?",
+      "generated_sql": "SELECT AVG(invoice_total) FROM (\n    SELECT invoice_no, SUM(total_amount) AS invoice_total\n    FROM online_retail\n    WHERE is_cancelled = 0\n      AND is_return = 0\n      AND is_zero_or_negative_price = 0\n    GROUP BY invoice_no\n);",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 1,
+        "reference_row_count": 1,
+        "predicted_columns": [
+          "AVG(invoice_total)"
+        ],
+        "reference_columns": [
+          "average_invoice_value"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT AVG(invoice_total) FROM (\n    SELECT invoice_no, SUM(total_amount) AS invoice_total\n    FROM online_retail\n    WHERE is_cancelled = 0\n      AND is_return = 0\n      AND is_zero_or_negative_price = 0\n    GROUP BY invoice_no\n);",
+        "latency_ms": 2273.89,
+        "prompt_tokens": 275,
+        "completion_tokens": 350,
+        "total_tokens": 625
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "OR007",
+      "dataset": "online_retail",
+      "question": "How many positive-quantity transactions occur during each hour of the day?",
+      "generated_sql": "SELECT invoice_hour, COUNT(*) AS transaction_count\nFROM online_retail\nWHERE quantity > 0\nGROUP BY invoice_hour\nORDER BY invoice_hour;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 15,
+        "reference_row_count": 15,
+        "predicted_columns": [
+          "invoice_hour",
+          "transaction_count"
+        ],
+        "reference_columns": [
+          "hour",
+          "transaction_count"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT invoice_hour, COUNT(*) AS transaction_count\nFROM online_retail\nWHERE quantity > 0\nGROUP BY invoice_hour\nORDER BY invoice_hour;",
+        "latency_ms": 768.27,
+        "prompt_tokens": 277,
+        "completion_tokens": 124,
+        "total_tokens": 401
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "OR008",
+      "dataset": "online_retail",
+      "question": "How many return records occurred each month?",
+      "generated_sql": "SELECT invoice_year, invoice_month, COUNT(*) AS return_count\nFROM online_retail\nWHERE is_return = 1\nGROUP BY invoice_year, invoice_month\nORDER BY invoice_year, invoice_month;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 0.0,
+        "results_match": false,
+        "predicted_row_count": 13,
+        "reference_row_count": 13,
+        "predicted_columns": [
+          "invoice_year",
+          "invoice_month",
+          "return_count"
+        ],
+        "reference_columns": [
+          "month",
+          "return_count"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT invoice_year, invoice_month, COUNT(*) AS return_count\nFROM online_retail\nWHERE is_return = 1\nGROUP BY invoice_year, invoice_month\nORDER BY invoice_year, invoice_month;",
+        "latency_ms": 780.91,
+        "prompt_tokens": 271,
+        "completion_tokens": 153,
+        "total_tokens": 424
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "OR009",
+      "dataset": "online_retail",
+      "question": "How many cancelled invoice line items are in the dataset?",
+      "generated_sql": "SELECT COUNT(*) FROM online_retail WHERE is_cancelled = 1;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 1,
+        "reference_row_count": 1,
+        "predicted_columns": [
+          "COUNT(*)"
+        ],
+        "reference_columns": [
+          "cancelled_records"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT COUNT(*) FROM online_retail WHERE is_cancelled = 1;",
+        "latency_ms": 605.52,
+        "prompt_tokens": 274,
+        "completion_tokens": 100,
+        "total_tokens": 374
+      },
+      "saved_to_database": true
+    },
+    {
+      "question_id": "OR010",
+      "dataset": "online_retail",
+      "question": "How many distinct identified customers are there in each country?",
+      "generated_sql": "SELECT country, COUNT(DISTINCT customer_id) AS distinct_customers\nFROM online_retail\nWHERE customer_id IS NOT NULL\nGROUP BY country\nORDER BY country;",
+      "evaluation": {
+        "status": "success",
+        "execution_success": true,
+        "result_accuracy": 1.0,
+        "results_match": true,
+        "predicted_row_count": 37,
+        "reference_row_count": 37,
+        "predicted_columns": [
+          "country",
+          "distinct_customers"
+        ],
+        "reference_columns": [
+          "country",
+          "unique_customers"
+        ]
+      },
+      "metrics": {
+        "sql": "SELECT country, COUNT(DISTINCT customer_id) AS distinct_customers\nFROM online_retail\nWHERE customer_id IS NOT NULL\nGROUP BY country\nORDER BY country;",
+        "latency_ms": 745.73,
+        "prompt_tokens": 274,
+        "completion_tokens": 126,
+        "total_tokens": 400
+      },
+      "saved_to_database": true
+    }
+  ]
+}

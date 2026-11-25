@@ -1,0 +1,22 @@
+﻿[
+  {"id":"CS001","dataset":"customer_shopping","difficulty":"easy","category":"count","question":"How many customers are in the dataset?"},
+  {"id":"CS002","dataset":"customer_shopping","difficulty":"easy","category":"group_by","question":"How many purchases are recorded in each category?"},
+  {"id":"CS003","dataset":"customer_shopping","difficulty":"medium","category":"aggregation","question":"What is the average purchase amount by gender?"},
+  {"id":"CS004","dataset":"customer_shopping","difficulty":"medium","category":"order_by","question":"Which five locations have the highest average purchase amount?"},
+  {"id":"CS005","dataset":"customer_shopping","difficulty":"easy","category":"aggregation","question":"What is the average review rating for each category?"},
+  {"id":"CS006","dataset":"customer_shopping","difficulty":"medium","category":"filter","question":"For each subscription status, calculate customer count and average purchase amount."},
+  {"id":"CS007","dataset":"customer_shopping","difficulty":"medium","category":"aggregation","question":"Compare purchase amount statistics for customers who applied discounts versus those who did not."},
+  {"id":"CS008","dataset":"customer_shopping","difficulty":"medium","category":"case","question":"Group customers into age bands: under 25, 25 to 44, 45 to 59, and 60 or above."},
+  {"id":"CS009","dataset":"customer_shopping","difficulty":"easy","category":"group_by","question":"How many purchases were made using each payment method?"},
+  {"id":"CS010","dataset":"customer_shopping","difficulty":"medium","category":"group_by","question":"What is the average purchase amount by season?"},
+  {"id":"OR001","dataset":"online_retail","difficulty":"easy","category":"count","question":"How many line-item records are in the online retail dataset?"},
+  {"id":"OR002","dataset":"online_retail","difficulty":"easy","category":"distinct","question":"How many distinct invoice numbers are in the dataset?"},
+  {"id":"OR003","dataset":"online_retail","difficulty":"medium","category":"order_by","question":"Which ten countries have the highest gross sales, excluding cancellations, returns, and nonpositive unit prices?"},
+  {"id":"OR004","dataset":"online_retail","difficulty":"medium","category":"time_series","question":"Calculate monthly revenue excluding cancellations, returns, and nonpositive unit prices."},
+  {"id":"OR005","dataset":"online_retail","difficulty":"medium","category":"order_by","question":"What are the ten best-selling products by quantity, excluding cancellation and return records?"},
+  {"id":"OR006","dataset":"online_retail","difficulty":"medium","category":"aggregation","question":"What is the average invoice value calculated using positive transactions only?"},
+  {"id":"OR007","dataset":"online_retail","difficulty":"medium","category":"time","question":"How many positive-quantity transactions occur during each hour of the day?"},
+  {"id":"OR008","dataset":"online_retail","difficulty":"medium","category":"time_series","question":"How many return records occurred each month?"},
+  {"id":"OR009","dataset":"online_retail","difficulty":"easy","category":"filter","question":"How many cancelled invoice line items are in the dataset?"},
+  {"id":"OR010","dataset":"online_retail","difficulty":"medium","category":"group_by","question":"How many distinct identified customers are there in each country?"}
+]
